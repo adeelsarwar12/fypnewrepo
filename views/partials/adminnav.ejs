@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nav</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    
+    <style>
+            .logo {
+      height: 50px;
+      width: 100px;
+      float: left;
+      margin-left: 3pc;
+      margin-top: 10px;
+    }
+    .navbar{
+        background-color: #008080 !important;
+    }
+        </style>
+        <style>
+                h1{
+                    color: black;
+                }
+                body {
+                    background: rgb(226, 239, 241);
+                }
+                hr {
+                    background: rgb(228, 65, 36)
+                }
+        
+                .contact-form {
+                    background: rgb(242, 244, 245);
+                    color: black;
+                    margin-top: 20px;
+                    padding: 100px;
+                    box-shadow: 0px 0px 10px 3px rgba(66, 64, 64, 0.267);
+                }
+        
+                .hidden {
+                    display: none;
+                }
+        
+                .hidden2 {
+                    display: none;
+                }
+            </style>
+            <script>
+                function showHide() {
+                    var checkbox = document.getElementById("chk");
+                    var hiddeninputs = document.getElementsByClassName("hidden");
+                    for (var i = 0; i != hiddeninputs.length; i++) {
+                        if (checkbox.checked) {
+                            hiddeninputs[i].style.display = "block";
+                        } else {
+                            hiddeninputs[i].style.display = "none";
+                        }
+                    }
+                }
+                function showHidee() {
+                    var checkbox = document.getElementById("chkk");
+                    var hiddeninputs = document.getElementsByClassName("hidden2");
+                    for (var i = 0; i != hiddeninputs.length; i++) {
+                        if (checkbox.checked) {
+                            hiddeninputs[i].style.display = "block";
+                        } else {
+                            hiddeninputs[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header" id="navbar1" >
+            <nav class="navbar navbar-expand-lg bg-info darken-3 fixed-top">
+                   <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMiELV4PZ_nKduwblm-CPKohMawwyuJ6oiymDzRKRHJbJvLyCS"  alt="logos" class="logo">
+                   </a>
+                    <!-- <h2 class="logo">Admin Panel</h2> -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item active ">
+                           
+                        </li>
+                    </ul>
+                    <li class="nav-item dropdown nav-user">
+                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><img src="" alt=""
+                                class="user-avatar-md rounded-circle"></a>
+                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                            aria-labelledby="navbarDropdownMenuLink2">
+                            <div class="nav-user-info">
+                                <span class="status"></span><span class="ml-2"> Avalible </span>
+                            </div>
+                            <a class="dropdown-item" href="/api/admin/logout"><i class="material-icons">person</i>Logout</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="/api/dashboard/welcome">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/api/dashboard/welcome" ><i
+                                        class="material-icons">dashboard</i>Dashboard <span
+                                        class="badge badge-success">6</span></a>
+
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-2" aria-controls="submenu-2"><i
+                                        class="material-icons">home</i>Add Hostel Data</a>
+                                <div id="submenu-2" class="collapse submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/room">Add<span
+                                                    class="badge badge-secondary">New</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-3" aria-controls="submenu-3"> <i
+                                        class="material-icons">meeting_room</i>Hostel Facilities</a>
+                                <div id="submenu-3" class="collapse submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Add</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-5" aria-controls="submenu-2"><i
+                                        class="material-icons">recent_actors</i>Doctor</a>
+                                <div id="submenu-5" class="collapse submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">List of Doctors</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Add Doctor</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-6" aria-controls="submenu-6"><i class="material-icons">
+                                        monetization_on</i>Receptionist</a>
+                                <div id="submenu-6" class="collapse submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Add Receptionist</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Views</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                        data-target="#submenu-7" aria-controls="submenu-7"><i class="material-icons">
+                                                accessibility</i>Lab</a>
+                                    <div id="submenu-7" class="collapse submenu">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Add Lab Assistant</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Views</a>
+                                            </li>
+    
+                                        </ul>
+                                    </div>
+                                </li>
+    
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-10" aria-controls="submenu-10"><i class="fa fa-folder-o"
+                                        aria-hidden="true"></i>Beds</a>
+                                <div id="submenu-10" class="collapse submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Wards List</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Add Wards And Bed</a>
+                                        </li>
+                                    </ul>
+                            <li class="nav-item">
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" aria-expanded="false" data-target="#submenu-11"
+                                    aria-controls="submenu-11"><i class="material-icons"> person</i> Profile</a>
+                                <div id="submenu-11" class="collapse submenu">
+
+
+                            </li>
+                    </div>
+                    </li>
+                    </ul>
+            </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+    
+    <script src="/vendor/js/jquery-3.3.1.min.js"></script>
+    <script src="/vendor/js/bootstrap.bundle.js"></script>
+    <script src="/vendor/js/jquery.slimscroll.js"></script>
+    <script src="/vendor/js/main-js.js"></script>
+    
+</body>
+
+</html>

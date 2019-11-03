@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Add Patient</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/styles/bootstrap-4.1.2/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/Resources/style.css" />
+
+    <style>
+      body {
+        background-image: linear-gradient(
+            rgba(29, 212, 212, 0.664),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url("css/img/1.jpg"), url(img/1.jpg);
+        background-size: cover;
+      }
+      body {
+        background: rgb(38, 202, 231);
+      }
+      hr {
+        background: rgb(228, 65, 36);
+      }
+      .contact-form {
+        background: rgb(242, 244, 245);
+        color: black;
+        margin-top: 20px;
+        padding: 100px;
+        box-shadow: 0px 0px 10px 3px rgba(66, 64, 64, 0.267);
+      }
+      .hidden {
+        display: none;
+      }
+      .hidden2 {
+        display: none;
+      }
+    </style>
+    <script>
+      function showHide() {
+        var checkbox = document.getElementById("chk");
+        var hiddeninputs = document.getElementsByClassName("hidden");
+        for (var i = 0; i != hiddeninputs.length; i++) {
+          if (checkbox.checked) {
+            hiddeninputs[i].style.display = "block";
+          } else {
+            hiddeninputs[i].style.display = "none";
+          }
+        }
+      }
+      function showHidee() {
+        var checkbox = document.getElementById("chkk");
+        var hiddeninputs = document.getElementsByClassName("hidden2");
+        for (var i = 0; i != hiddeninputs.length; i++) {
+          if (checkbox.checked) {
+            hiddeninputs[i].style.display = "block";
+          } else {
+            hiddeninputs[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <% include partials/receptionnav %>
+    <div class="dashboard-wrapper">
+      <div class="container-fluid  dashboard-content">
+        <div class="container contact-form">
+          <h1>Add Patient</h1>
+          <hr />
+          <form id="CreatePatient">
+          <div class="row">
+            <div class="col-md-10">
+              <div class="col-md-8">
+                  <div class="form-group">
+                    <label>Patient Name</label>
+                    <Input type="text" name="title" id="nameid" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Patient Email</label>
+                    <Input type="email" name="email" id="emailid" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                    required class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Password</label>
+                    <Input type="password" name="password" id="passwordid" class="form-control" />
+                  </div>
+                  <div>
+                    <label>Blood Group</label>
+                    <select class="browser-default custom-select" id="bloodid">
+                      <option value="A+" selected>A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Gender</label>
+                    <select class="browser-default custom-select" id="genderid">
+                      <option value="male" selected>Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Patient Phone</label>
+                    <Input type="tel" name="phone" id="phoneid" placeholder="03XX-XXXXXXX"
+                    pattern="^\d{4}-\d{7}$" required class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Age</label>
+                    <Input type="number" name="age" id="ageid" class="form-control" />
+                  </div>
+                  <br />
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" id="btn">Create Patient</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

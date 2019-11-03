@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Validation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/styles/bootstrap-4.1.2/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/Resources/style.css" />
+</head>
+
+<body>
+    <% include partials/adminnav %>
+    <div class="dashboard-wrapper">
+        <div class="container-fluid  dashboard-content">
+            <div class="container">
+                <h1>Add Details</h1>
+                <div>
+                    <form method="POST" action="/admin/addhosteldata">
+                        <table id="employee_table">
+                                
+                            <tr id="row1">
+                                <td><input type="number" name="f_num" placeholder="Enter Floor Number"></td>
+                                <td><input type="number" name="num_of_room" placeholder="Enter Total Room"></td>
+                                <td><input type="number" name="available_seats" placeholder="Enter Available Seats">
+                                </td>
+                                <td><input type="submit" class="btn-primary btn-rounded btn-sm " name="submit_row" value="Add Details"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- basic table  -->
+            <!-- ============================================================= -->
+            <div class="container">
+            </br></br>
+                    <h2>Hostel Details</h2>
+                <table id="example" class=" table table-striped table-bordered">
+                        <% include ./partials/messages %>
+                    <thead>
+                        <tr>
+                            <th>
+                                Floor Number
+                            </th>
+                            <th>Total Number Of Rooms</th>
+                            <th>Available Seats</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <% for(let i = 0; i < data.length; i++) { %>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <td><%=data[i].f_num %></td>
+                                        <td><%=data[i].num_of_room %></td>
+                                        <td><%=data[i].available_seats %></td>
+                                        <td><a href="/admin/update/<%= data[i]._id %>" class="btn-primary btn-rounded btn-sm ">Update</a></td>
+                                        <td>
+                                            <form method="POST" action="/admin/<%= data[i]._id %>?_method=DELETE">
+                                                <button type="submit" onclick="return confirm('Are you sure?');"
+                                                    class="btn-danger btn-rounded btn-sm my-0 "
+                                                    onclick="spjs.contentApproval.toggleApprovelStatus(0);return false;">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
