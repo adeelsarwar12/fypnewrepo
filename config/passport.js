@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // Load User model
-const AdminModel = require('../Api/Model/admin');
+const AdminModel = require('../Api/Model/user');
 
 //For Login
 

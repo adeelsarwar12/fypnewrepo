@@ -3,28 +3,32 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 // Load User model
-const AdminModel = require('../Model/admin');
-const { forwardAuthenticated } = require('../../config/auth');
+const AdminModel = require('../Model/user');
 
 
 // Register
 router.post('/signup', (req, res) => {
+  console.log("here")
   const { name, email, password, password2, tel, address } = req.body;
   let errors = [];
-
-  if (!name || !email || !password || !password2 || tel || address) {
-    errors.push({ msg: 'Please enter all fields' });
-  }
-
   if (password != password2) {
-    errors.push({ msg: 'Passwords do not match' });
+    req.flash(
+      'error_msg',
+      'Password do not Match'
+    );
+    res.redirect('/api/signup');
   }
 
   if (password.length < 6) {
-    errors.push({ msg: 'Password must be at least 6 characters' });
+    req.flash(
+      'error_msg',
+      'Password must be at least 6 characters'
+    );
+    res.redirect('/api/signup');
   }
  else {
     AdminModel.findOne({ email: email }).then(user => {
+      console.log('here29')
       if (user) {
         errors.push({ msg: 'Email already exists' });
         res.render('signup', {
@@ -42,10 +46,12 @@ router.post('/signup', (req, res) => {
           email,
           password,
           tel,
-          address
+          address,
+          role:'user'
         });
 
         bcrypt.genSalt(10, (err, salt) => {
+          console.log('here1')
           bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
             newUser.password = hash;
@@ -66,20 +72,25 @@ router.post('/signup', (req, res) => {
   }
 });
 
+
 // Login
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/api/dashboard/welcome',
+    successRedirect: '/api/role/',
     failureRedirect: '/api/login',
     failureFlash: true
   })(req, res, next);
 });
-
+//admin route
+router.get('/dashboard',(req,res)=>{
+  res.render('admin')
+})
 // Logout
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'You are logged out');
   res.redirect('/api/login');
 });
+
 
 module.exports = router;

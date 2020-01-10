@@ -17,12 +17,15 @@ require('./config/passport')(passport);
 const Blogs = require('./Api/Routes/blogs');
 const Contact = require('./Api/Routes/contact');
 const Admin = require('./Api/Routes/admin');
-const Dashborad = require('./Api/Routes/dashboard');
-const Rooms = require('./Api/Routes/rooms');
 
+
+const Dashborad = require('./Api/Routes/dashboard');
+const property = require("./API/routes/property");
+const propertyData = require('./API/Model/properties');
+const user = require('./Api/Routes/user');
 //MongoDb Connection
 mongoose.connect(
-    "mongodb://localhost/Hostels",{ useNewUrlParser: true, useCreateIndex: true,useUnifiedTopology: true ,useFindAndModify: false }
+    "mongodb://localhost/FYP",{ useNewUrlParser: true, useCreateIndex: true,useUnifiedTopology: true ,useFindAndModify: false }
 ).then(() => {
     console.log("Connected to Database");
     })
@@ -67,9 +70,21 @@ app.use(
     next();
   });
   
+app.use("/property",property);
+app.get("/", async (req, res) => {
+    let data = await propertyData.find()
+      res.render("index",{
+        data:data
+      });
+    });
+    
+  
 //TO Render Index Page
 app.get('/',(req,res)=>{
-    res.render('index');
+    let data=[]
+    res.render('index',{
+        data:data
+    });
 });
 //To render About page
 app.get('/aboutus',(req,res)=>{
@@ -86,14 +101,38 @@ app.get('/api/login',(req,res)=>{
 //to render rooms page
 app.get('/rooms',(req,res)=>res.render('booking'));
 //For Blog
-app.use('/hostel',Blogs);
+app.use('/api',Blogs);
 //For Contact
 app.use('/contact',Contact);
 //For Admin
 app.use('/api/admin',Admin);
-//To Test 
-app.use('/api/dashboard',Dashborad);
-//For Room
-app.use('/admin',Rooms);
 
+
+
+app.use('/user',user);
+app.get('/blog',(req,res)=>{
+    res.render('blog')
+})
+
+app.get('/temp',(req,res)=>{
+    res.render('temp')
+})
+//Fuzzy
+ 
+app.get('/api/agents',(req,res)=>{
+    res.render('agents');
+})
+
+
+app.use('/api/dashboard',Dashborad)
+app.use('/api/role',require('./Api/Routes/role'));
+
+
+//MainPage agents_LookUp
+// app.get('/agents',(req,res)=>{
+//     res.render('agents')
+// })
+app.get('/api/blog',(req,res)=>{
+    res.render('blog');
+})
 module.exports=app

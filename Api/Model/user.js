@@ -15,10 +15,14 @@ const userSchema = mongoose.Schema({
     tel:{
         type: String,
         require:true
-    }, 
-    cnic:{
+    },
+    address:{
+        type:String,
+        require:true
+    },
+    role:{
         type:String,
         require:true
     }
 });
-module.exports=mongoose.model('User',userSchema);
+module.exports=mongoose.model('NewUserModel',userSchema);

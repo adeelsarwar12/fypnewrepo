@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ./partials/user/head %>
+  <style>
+  body{
+      background-color: #eeeeee
+  }
+  </style>
+</head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+    
+    <!-- header down here -->
+    <% include ./partials/user/header %>
+    <!--sidebar start-->
+    <% include ./partials/user/sidenavbar %>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ./partials/user/head %>
+</head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+    
+    <!-- header down here -->
+    <% include ./partials/user/header %>
+    <!--sidebar start-->
+    <% include ./partials/user/sidenavbar %>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content">
+        <div class="container">    
+            <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div style="background-color:#eeeeee;color:#eeeeee;text-align: center" class="panel-heading">
+                    <div class="panel-title">Add Property</div>
+                    <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                </div>  
+                <div class="panel-body" >
+                                
+    
+                        <form  class="form-horizontal"  method="POST" action="/property/addProperty" enctype="multipart/form-data" >
+                            <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                            <div id="div_id_select" class="form-group required">
+                                <label for="id_select"  class="control-label col-md-4  requiredField"> Purpose<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                    <label class="radio-inline"><input type="radio"  name="select" id="saleid" value="Sale"  style="margin-bottom: 10px">For Sale</label>
+                                    <label class="radio-inline"><input type="radio"  name="select" id="rentid" value="Rent"  style="margin-bottom: 10px">For Rent</label>
+                                    
+                                </div>
+                            </div> 
+                            <div id="div_id_As" class="form-group required">
+                                <label for="id_As"  class="control-label col-md-4  requiredField">Property Type<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                    <label class="radio-inline"> <input type="radio" name="As" id="homeid" value="home"  style="margin-bottom: 10px">Home</label>
+                                    <label class="radio-inline"> <input type="radio" name="As" id="commercialid" value="commercial"  style="margin-bottom: 10px">Commercial</label>
+                                    <label class="radio-inline"> <input type="radio" name="As" id="plotid" value="plots"  style="margin-bottom: 10px">Plots</label>                                           
+                                </div>
+                            </div>
+                            <div id="div_id_As" class="form-group required">
+                                    <label for="id_As"  class="control-label col-md-4  requiredField">Select City<span class="asteriskField">*</span> </label>
+                                    <div class="controls col-md-8 "  style="margin-bottom: 10px">
+                                            <select name="city" id="cityid"class="form-control form-control-sm">
+                                                    <option value="rwp">Rawalpindi</option>
+                                                  </select>    
+                                    </div>
+                                    
+                                </div>
+                                    
+                                
+                                <div id="div_id_As" class="form-group required">
+                                        <label for="id_As"  class="control-label col-md-4  requiredField">Location<span class="asteriskField">*</span> </label>
+                                        <div class="controls col-md-8 ">
+                                                <input class="input-md  textinput textInput form-control" type="text"  maxlength="30" name="location" required placeholder="Enter Your Location" style="margin-bottom: 10px" type="text"  />       
+                                        </div>
+                                    </div>
+                                    <div id="div_id_As" class="form-group required">
+                                            <label for="id_As" style="background-color:#eeeeee; margin-bottom: 20px; color: honeydew; height:20px;  text-align: center;" class="control-label col-md-12   requiredField">Property Details<span class="asteriskField">*</span> </label>
+                                        </div>
+                                   
+                            <div id="div_id_username" class="form-group required">
+                                <label for="id_username" class="control-label col-md-4  requiredField"> Property Title<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <input class="input-md  textinput textInput form-control" id="propertytitleid" maxlength="30" name="title" placeholder="" style="margin-bottom: 10px" type="text"  />
+                                </div>
+                            </div>
+                            <div id="div_id_email" class="form-group required">
+                                <label for="id_email" class="control-label col-md-4  requiredField">Description<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <textarea class="input-md  form-control" id="descriptionid" name="desc" placeholder="Add Description Here" style="margin-bottom: 10px" type="text"  ></textarea>
+                                </div>     
+                            </div>
+                            <div id="div_id_password1" class="form-group required">
+                                <label for="priceid" class="control-label col-md-4  requiredField">Price: (PKR)<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md textinput numberInput form-control" id="priceid" name="price" placeholder="" style="margin-bottom: 10px" type="number" />
+                                </div>
+                            </div>
+                            <div id="div_id_name" class="form-group required"> 
+                                <label for="id_name" class="control-label col-md-4  requiredField">Land Area<span class="asteriskField">*</span> </label> 
+                                <div class="controls col-md-8 "> 
+                                    <input class="input-md numberinput textInput form-control" id="areaid" name="area" placeholder="Only Number" style="margin-bottom: 10px" type="number" />
+                                </div>
+                            </div>
+                            <div id="div_id_As" class="form-group required">
+                                    <label for="id_As" style="background-color:#eeeeee; margin-bottom: 20px; color: #eeeeee; height:20px;  text-align: center;" class="control-label col-md-12   requiredField">Add Image<span class="asteriskField">*</span> </label>
+                                </div>
+                                <br>
+                                <div class="form-group required">
+                                        <div class="row">
+                                        <div class=" col-md-8 imgUp">
+                                          <div class="imagePreview"></div>
+                                      <label style="background-color:gray;color:cornsilk" class="btn btn-primay btn-lg">Upload<input id="myFile" name="photo"   type="file" required class="input-md uploadFile img" multiple style="width: 0px;height: 0px;overflow: hidden;">
+                                                      </label>
+                                        </div><!-- col-2 -->
+                                        <i class="fa fa-plus imgAdd"></i>
+                                       </div><!-- row -->
+                                      </div><!-- container -->
+                                      <div id="div_id_As" class="form-group required">
+                                            <label for="id_As" style="background-color: #eeeeee; margin-bottom: 20px; color: honeydew; height:20px;  text-align: center;" class="control-label col-md-12   requiredField">Please Check Your Info Before Submit<span class="asteriskField">*</span> </label>
+                                        </div>   
+                            <div class="form-group  "> 
+                                <div class="aab controls col-md-4 "></div>
+                                <div class="controls">
+                                    <button type="submit"  class="btn btn-primary btn-lg " >Add Property</button>
+                                </div>
+                            </div> 
+                                
+                        </form>
+    
+                    
+                </div>
+            </div>
+        </div> 
+    </div>
+    </div> 
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+  <!-- javascripts -->
+  <% include ./partials/user/sidenavbar %>
+
+</body>
+
+</html>
+
+  <!-- container section start -->
+  </section>
+  <!-- javascripts -->
+  <% include ./partials/user/sidenavbar %>
+
+</body>
+
+</html>
