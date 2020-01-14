@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const { ensureAuthenticated, forwardAuthenticated } = require('../../config/auth');
 // Load User model
 const AdminModel = require('../Model/user');
 
@@ -82,8 +83,11 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 //admin route
-router.get('/dashboard',(req,res)=>{
-  res.render('admin')
+router.get('/dashboard',ensureAuthenticated,(req,res)=>{
+  data =req.user
+  res.render('admin', {
+    data
+  })
 })
 // Logout
 router.get('/logout', (req, res) => {

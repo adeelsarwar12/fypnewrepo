@@ -4,6 +4,7 @@ const Property = require("../controllers/property");
 const multer = require('multer');
 const { ensureAuthenticated, forwardAuthenticated } = require('../../config/auth');
 const propertyData = require('../Model/properties');
+const { MailBox } = require('./contact')
 // SET STORAGE
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -81,9 +82,13 @@ function escapeRegex(text) {
   
 };
 
-router.get('/list',async (req,res)=>{
+router.get('/list',ensureAuthenticated,async (req,res)=>{
+  let user= req.user
+  MailBox.mailBox()
   let data = await propertyData.find({isActive:'pending'})
-    res.render('approve', {data:data})
+
+  beta = Alpha.length
+    res.render('approve', {data:data,user})
   })
 
   router.put('/status/:id',(req,res)=>{

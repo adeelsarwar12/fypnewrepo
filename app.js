@@ -103,7 +103,7 @@ app.get('/rooms',(req,res)=>res.render('booking'));
 //For Blog
 app.use('/api',Blogs);
 //For Contact
-app.use('/contact',Contact);
+app.use('/api',Contact);
 //For Admin
 app.use('/api/admin',Admin);
 
