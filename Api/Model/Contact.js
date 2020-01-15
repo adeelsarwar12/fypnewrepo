@@ -22,4 +22,5 @@ require: true
   }
 });
 
-module.exports = mongoose.model('ContactUs', ContactUs);
+const Contact = module.exports = mongoose.model('ContactUs', ContactUs);
+module.exports=Contact

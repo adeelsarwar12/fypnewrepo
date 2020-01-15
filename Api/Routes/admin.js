@@ -73,6 +73,8 @@ router.post('/signup', (req, res) => {
   }
 });
 
+mongoose = require('mongoose')
+  contactModel = mongoose.model('ContactUs')
 
 // Login
 router.post('/login', (req, res, next) => {
@@ -83,10 +85,15 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 //admin route
-router.get('/dashboard',ensureAuthenticated,(req,res)=>{
+router.get('/dashboard',ensureAuthenticated,async (req,res)=>{
   data =req.user
+  let chek= await contactModel.find({status: 'unread'})
+  
+  console.log(chek)
+  beta = chek.length
   res.render('admin', {
-    data
+    user:data,
+    unread:beta
   })
 })
 // Logout

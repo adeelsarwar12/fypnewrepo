@@ -4,7 +4,8 @@ const Property = require("../controllers/property");
 const multer = require('multer');
 const { ensureAuthenticated, forwardAuthenticated } = require('../../config/auth');
 const propertyData = require('../Model/properties');
-const { MailBox } = require('./contact')
+mongoose = require('mongoose')
+  contactModel = mongoose.model('ContactUs')
 // SET STORAGE
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -84,11 +85,26 @@ function escapeRegex(text) {
 
 router.get('/list',ensureAuthenticated,async (req,res)=>{
   let user= req.user
-  MailBox.mailBox()
+  var MongoClient = require('mongodb').MongoClient;
+//   var url = "mongodb://localhost:27017/FYP";
+   var Alpha
+// MongoClient.connect(url, function(err, db) {
+ 
+//   if (err) throw err;
+//   Alpha = db.collection("ContactUs").find({status: 'unread'}, function(err, result) {
+//     if (err) throw err;
+//     console.log(result.name);
+//     db.close();
+//   });
+// });
   let data = await propertyData.find({isActive:'pending'})
-
-  beta = Alpha.length
-    res.render('approve', {data:data,user})
+  let chek= await contactModel.find({status: 'unread'})
+  console.log(chek)
+  beta = chek.length
+    res.render('approve', {
+      data:data,
+      user,
+      unread:beta})
   })
 
   router.put('/status/:id',(req,res)=>{
