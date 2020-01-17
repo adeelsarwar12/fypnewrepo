@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Royal Estate - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Agents</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -39,7 +39,7 @@
     				</p>
     			</div>
     			<div class="col d-flex justify-content-end">
-    				<p class="num"><span class="icon-phone"></span> + 1700 12345 6789</p>
+    				<p class="num"><span class="icon-phone"></span> +923104648945</p>
     			</div>
     		</div>
     	</div>
@@ -47,7 +47,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Royal<span>estate</span></a>
+	      <a class="navbar-brand" href="index.html">Online Real<span>Estate</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -55,14 +55,13 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 				
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="property.html" class="nav-link">Property</a></li>
-	          <li class="nav-item active"><a href="agents.html" class="nav-link">Agents</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta"><a href="contact.html" class="nav-link ml-lg-2"><span class="icon-user"></span> Sign-In</a></li>
-	          <li class="nav-item cta cta-colored"><a href="contact.html" class="nav-link"><span class="icon-pencil"></span> Sign-Up</a></li>
+				<li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="/api/agents" class="nav-link">Agents</a></li>
+				<li class="nav-item"><a href="/aboutus" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="/api/blog" class="nav-link">Blog</a></li>
+				<li class="nav-item"><a href="/api/contact" class="nav-link">Contact</a></li>
+				<li class="nav-item cta"><a href="/api/login" class="nav-link ml-lg-2"><span class="icon-user"></span> Sign-In</a></li>
+				<li class="nav-item cta cta-colored"><a href="/api/signup" class="nav-link"><span class="icon-pencil"></span> Sign-Up</a></li>
 
 	        </ul>
 	      </div>
@@ -85,21 +84,7 @@
         </div>
       </div>
 	</div>
-	<!-- for search Form -->
-	<div class="container h-100">
-		<div class="d-flex justify-content-center h-100">
-		  <div class="searchbar" style="margin-top:10dp" >
-			<input aria-label="Search" onkeyup="showResults(this.value)" type="text" class="form-control" placeholder="Search Agent">
-			<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-		  </div>
-		  
-	  </div>
-	  <div class="d-flex justify-content-center h-100
-	  style="margin-left: 0px;background: #ffffff; width: 40%;background-position-y: 2ch>	
-	  <div class="border" id="search-results">
-
-	  </div>
-	</div>
+	
 
 
 
@@ -131,7 +116,21 @@
 				</div>
 				
 			</form> -->
-			
+	<!-- for search Form -->
+	<div class="container h-100 v-10">
+		<div class="d-flex justify-content-center h-150 v-10" >
+		  <div class="searchbar" style="padding-top:20dp">
+			<input aria-label="Search" onkeyup="showResults(this.value)" type="text" class="form-control" placeholder="Search Agent">
+			<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+		  </div>
+		  
+	  </div>
+	  <div class="d-flex justify-content-center h-100
+	  style="margin-left: 0px;background: #ffffff; width: 40%;background-position-y: 2ch margin-top:10dp>	
+	  <div class="border" id="search-results">
+
+	  </div>
+	</div>		
     <section class="ftco-section bg-light">
     	<div class="container">
     		<div class="row">

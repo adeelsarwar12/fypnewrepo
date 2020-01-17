@@ -9,6 +9,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const methodOverride = require('method-override');
 
+const BlogData = require('./Api/Model/blog')
 //initialize passport 
 // Passport Config
 require('./config/passport')(passport);
@@ -17,6 +18,7 @@ require('./config/passport')(passport);
 const Blogs = require('./Api/Routes/blogs');
 const Contact = require('./Api/Routes/contact');
 const Admin = require('./Api/Routes/admin');
+const agents=require('./Api/Routes/agents')
 
 
 const Dashborad = require('./Api/Routes/dashboard');
@@ -106,8 +108,9 @@ app.use('/api',Blogs);
 app.use('/api',Contact);
 //For Admin
 app.use('/api/admin',Admin);
+app.use('/api/agents',agents)
 
-
+app.use('/api/user',user)
 
 app.use('/user',user);
 app.get('/blog',(req,res)=>{
@@ -125,6 +128,7 @@ app.get('/api/agents',(req,res)=>{
 
 
 app.use('/api/dashboard',Dashborad)
+
 app.use('/api/role',require('./Api/Routes/role'));
 
 
@@ -132,7 +136,10 @@ app.use('/api/role',require('./Api/Routes/role'));
 // app.get('/agents',(req,res)=>{
 //     res.render('agents')
 // })
-app.get('/api/blog',(req,res)=>{
-    res.render('blog');
+app.get('/api/blog',async(req,res)=>{
+    let Alpha = await BlogData.find()
+    res.render('blog', {
+        Alpha
+    });
 })
 module.exports=app

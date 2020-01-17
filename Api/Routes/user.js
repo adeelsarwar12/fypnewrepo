@@ -12,4 +12,9 @@ router.get('/property',ensureAuthenticated,(req,res)=>{
 router.get('/blog',(req,res)=>{
     res.render('createBlogs');
 })
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success_msg', 'You are logged out');
+    res.redirect('/api/login');
+  });
 module.exports=router;

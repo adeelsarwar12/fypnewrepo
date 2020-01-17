@@ -4,11 +4,11 @@ const BlogData = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "UserId"
     },
-  post: {
+  author: {
     type: String,
     require: true
   },
-  name: {
+  desc: {
     type: String,
     require: true
   },
@@ -16,10 +16,10 @@ const BlogData = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  update:{
-    type: Date
+  title:{
+    type: String
   },
-img:{
+file:{
 type:String
 }
 });

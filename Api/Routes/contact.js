@@ -41,14 +41,4 @@ router.post('/contactus',(req,res)=>{
           Alpha:Alpha
         }).catch()
     })
-    module.exports = {
-    
-mailBox: function() {
-    let Alpha = contactData.find({status:'unread'}).then(result=> {
-        if(result) {
-            return result
-        }
-    })
-}    
-}
 module.exports=router;

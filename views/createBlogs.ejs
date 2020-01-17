@@ -1,16 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <% include ./partials/user/head %>
+  <style>
+  body{
+      background-color: #eeeeee
+  }
+  </style>
 </head>
+
 <body>
-    <form method="POST" action="/api/blogs/create" >
-        <input name="name" type="text" placeholder="title">
-        <textarea name="post" type="text" placeholder="enter your blog"></textarea>
-        <button type="submit" name="sumbit">submit</button>
-    </form>
+  <!-- container section start -->
+  <section id="container" class="">
+    
+    <!-- header down here -->
+    <% include ./partials/user/header %>
+    <!--sidebar start-->
+    <% include ./partials/user/sidenavbar %>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ./partials/user/head %>
+</head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+    
+    <!-- header down here -->
+    <% include ./partials/user/header %>
+    <!--sidebar start-->
+    <% include ./partials/user/sidenavbar %>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content">
+        <div class="container">    
+            <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div style="background-color:#eeeeee;color:#000000;text-align: center" class="panel-heading">
+                    <div class="panel-title">Add Blog</div>
+                    <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                </div>  
+                <div class="panel-body" >
+                                
+    
+                        <form  class="form-horizontal"  method="POST" action="/api/blogs/create" enctype="multipart/form-data" >
+                        
+                                    
+                            <div id="div_id_username" class="form-group required">
+                                <label for="id_username" class="control-label col-md-4  requiredField">Author<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <input class="input-md  textinput textInput form-control" id="propertytitleid" maxlength="30" name="author" placeholder="" style="margin-bottom: 10px" type="text"  />
+                                </div>
+                            </div>
+                               
+                                   
+                            <div id="div_id_username" class="form-group required">
+                                <label for="id_username" class="control-label col-md-4  requiredField">  Title<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <input class="input-md  textinput textInput form-control" id="propertytitleid" maxlength="30" name="title" placeholder="" style="margin-bottom: 10px" type="text"  />
+                                </div>
+                            </div>
+                            <div id="div_id_email" class="form-group required">
+                                <label for="id_email" class="control-label col-md-4  requiredField">Description<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <textarea class="input-md  form-control" id="descriptionid" name="desc" placeholder="Add Description Here" style="margin-bottom: 10px" type="text"  ></textarea>
+                                </div>     
+                            </div>
+                           
+                            <div id="div_id_email" class="form-group required">
+                                <label for="id_email" class="control-label col-md-4  requiredField">Image<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <input type="file" accept="image/*" name="photo" class="form-control" />
+                                </div>     
+                            </div>
+
+
+                            
+                            <div class="form-group  "> 
+                                <div class="aab controls col-md-4 "></div>
+                                <div class="controls">
+                                    <button type="submit"  class="btn btn-primary btn-lg " >Add Blog</button>
+                                </div>
+                            </div> 
+                                
+                        </form>
+    
+                    
+                </div>
+            </div>
+        </div> 
+    </div>
+    </div> 
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+  <!-- javascripts -->
+  <% include ./partials/user/sidenavbar %>
+
 </body>
+
+</html>
+
+  <!-- container section start -->
+  </section>
+  <!-- javascripts -->
+  <% include ./partials/user/sidenavbar %>
+
+</body>
+
 </html>
