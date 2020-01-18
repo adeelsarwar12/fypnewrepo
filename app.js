@@ -40,10 +40,10 @@ mongoose.Promise=global.Promise;
 app.set('views',path.join( __dirname +'/views'));
 app.set('view engine','ejs');
 app.use(express.static(__dirname + '/public'));
+app.use('/uploads',express.static('uploads'));
 
 
-
-app.use(bodyparser.urlencoded({extended:false}));
+app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
 app.use(helmet());
 app.use(methodOverride('_method'));
@@ -75,19 +75,15 @@ app.use(
 app.use("/property",property);
 app.get("/", async (req, res) => {
     let data = await propertyData.find()
+    console.log(data)
       res.render("index",{
-        data:data
+        data:data,
+        property: data
       });
     });
-    
+  //To Reset Password
+app.use('/pass',require('./Api/Routes/resetPassword'));
   
-//TO Render Index Page
-app.get('/',(req,res)=>{
-    let data=[]
-    res.render('index',{
-        data:data
-    });
-});
 //To render About page
 app.get('/aboutus',(req,res)=>{
     res.render('about')

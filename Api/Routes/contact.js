@@ -32,13 +32,13 @@ router.post('/contactus',(req,res)=>{
     //to get mailbox
     router.get('/mailbox',ensureAuthenticated,async (req,res)=>{
         user =req.user
-        let Alpha =await contactData.find({status: 'unread'})
+        let Alpha =await contactData.find({status: 'unread'}).catch(e=>console.log(e))
         beta = Alpha.length
 
         res.render('mailbox', {
           user,
           unread:beta,
           Alpha:Alpha
-        }).catch()
+        })
     })
 module.exports=router;

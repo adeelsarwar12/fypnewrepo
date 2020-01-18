@@ -67,5 +67,13 @@ router.delete('/:id',(req, res) => {
 });
   router.put('/:id',(req,res)=>{
   })
+// detail pagge
 
+router.get('/details/:id',async(req,res)=>{
+    let detail = await BlogData.findOne({_id: req.params.id})
+    res.render('blogPost',
+    {
+      detail
+    })
+})
 module.exports=router;

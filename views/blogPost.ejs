@@ -78,69 +78,25 @@
       </div>
     </div>
 
-    <section class="ftco-section bg-light">
-
-    	<div class="container">
-        
-        <div class="row d-flex">
-          <% for(let i = 0; i < Alpha.length; i++) { %>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="/api/details/<%=Alpha[i].id%>" class="block-20"><img src="/<%=Alpha[i].file%>"/>
-              </a>
-              
-              <div class="text mt-3 d-block">
-                <h3 class="heading mt-3"><a href="#"><%=Alpha[i].title%></a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">, <%=Alpha[i].date%></a></div>
-                  <div><a href="#"><%=Alpha[i].author%></a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <% } %>
-         
-        </div>
-    		<div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-    	</div>
-    </section>
-		
-		<section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <h2>Subcribe to our Newsletter</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-              <div class="row d-flex justify-content-center mt-5">
-                <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section>
+        <div class="main-wrapper">
+	    
+            <article class="blog-post px-3 py-5 p-md-5">
+                <div class="container">
+                    <header class="blog-post-header">
+                        <h2 class="title mb-2"><%=detail.title%></h2>
+                        <div class="meta mb-3"><span class="date"><%=detail.date%></span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+                    </header>
+                    
+                    <div class="blog-post-body">
+                        <figure class="blog-banner">
+                            <a href=""><img class="img-fluid" src="/<%=detail.file%>" alt="image"></a>
+                            <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                        </figure>
+                        <p><%=detail.desc%></p>
+                        
+                        <h3 class="mt-5 mb-3">Code Block Example</h3>
+                        <p>You can get more info at <a href="https://highlightjs.org/" target="_blank">https://highlightjs.org/</a>. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. </p>
     </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
