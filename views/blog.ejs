@@ -53,6 +53,8 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="/api/sale" class="nav-link">Sale</a></li>
+            <li class="nav-item active"><a href="/api/rent" class="nav-link">Rent</a></li>
             <li class="nav-item"><a href="/api/agents" class="nav-link">Agents</a></li>
             <li class="nav-item"><a href="/aboutus" class="nav-link">About</a></li>
             <li class="nav-item"><a href="/api/blog" class="nav-link">Blog</a></li>
@@ -86,7 +88,7 @@
           <% for(let i = 0; i < Alpha.length; i++) { %>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="/api/details/<%=Alpha[i].id%>" class="block-20"><img src="/<%=Alpha[i].file%>"/>
+              <a href="/api/details/<%=Alpha[i].id%>" class="block-20"><img class="bd-placeholder-img" width="100%" height="250" src="/<%= Alpha[i].file %>" alt="Image">
               </a>
               
               <div class="text mt-3 d-block">

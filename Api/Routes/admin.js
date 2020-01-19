@@ -10,7 +10,7 @@ const AdminModel = require('../Model/user');
 // Register
 router.post('/signup', (req, res) => {
   console.log("here")
-  const { name, email, password, password2, tel, address } = req.body;
+  const { name, email, password, password2, tel, address,userType } = req.body;
   let errors = [];
   if (password != password2) {
     req.flash(
@@ -19,7 +19,7 @@ router.post('/signup', (req, res) => {
     );
     res.redirect('/api/signup');
   }
-
+console.log(userType);
   if (password.length < 6) {
     req.flash(
       'error_msg',
@@ -39,7 +39,8 @@ router.post('/signup', (req, res) => {
           password,
           password2,
           tel,
-          address
+          address,
+          userType
         });
       } else {
         const newUser = new AdminModel({
@@ -48,7 +49,7 @@ router.post('/signup', (req, res) => {
           password,
           tel,
           address,
-          role:'user'
+          role:userType
         });
 
         bcrypt.genSalt(10, (err, salt) => {

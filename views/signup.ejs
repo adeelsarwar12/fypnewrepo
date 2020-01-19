@@ -77,6 +77,8 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="/api/sale" class="nav-link">Sale</a></li>
+            <li class="nav-item active"><a href="/api/rent" class="nav-link">Rent</a></li>
             <li class="nav-item"><a href="/api/agents" class="nav-link">Agents</a></li>
             <li class="nav-item"><a href="/aboutus" class="nav-link">About</a></li>
             <li class="nav-item"><a href="/api/blog" class="nav-link">Blog</a></li>
@@ -136,6 +138,19 @@
             <span class="focus-input100"></span>
         </div>
     
+        <div class="wrap-input100 validate-input m-b-26" data-validate="Phone is required">
+        
+        <select class="form-control" name="userType" >
+          <option value="user">Owner</option>
+          <option value="admin">Admin</option>
+          <option value="agent">Agent</option>
+          
+        </select>
+        <span class="focus-input100"></span>
+      </div>
+
+
+
     
         <div class="flex-sb-m w-full p-b-30">
             <div class="contact100-form-checkbox">

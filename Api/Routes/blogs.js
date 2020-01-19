@@ -50,8 +50,8 @@ let Alpha=req.user
          .save()
          .then(result => {
            console.log(result);
-          res.json(result);
-           //res.redirect('/blog');
+          // res.json(result);
+           res.redirect('api/blogList');
          })
          .catch(err => {
            console.log(err);
@@ -75,5 +75,34 @@ router.get('/details/:id',async(req,res)=>{
     {
       detail
     })
+})
+router.get('/bloglist',ensureAuthenticated,async(req,res)=>{
+let data=await BlogData.find({userId:req.user.id})
+  res.render('blogList',{data})
+})
+router.post("/edit",(req,res)=>{
+  let id;
+  id = req.body.id
+  BlogData.findOneAndUpdate({
+    _id:id
+  }, {
+    $set: {
+      author: req.body.author ,
+      title: req.body.title,
+      desc: req.body.desc,
+     
+    }
+  }, { new: true }).then();
+  req.flash(
+    'success_msg',
+    'Updated'
+  );
+  res.redirect('/api/bloglist');
+
+})
+router.get('/blogedit/:id',async(req,res)=>{
+  id=req.params.id
+  let data=await BlogData.findOne({_id:id})
+  res.render('editBlog',{data})
 })
 module.exports=router;

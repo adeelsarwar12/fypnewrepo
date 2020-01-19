@@ -75,10 +75,12 @@ app.use(
 app.use("/property",property);
 app.get("/", async (req, res) => {
     let data = await propertyData.find()
+    let blog =await BlogData.find().limit(4)
     console.log(data)
       res.render("index",{
         data:data,
-        property: data
+        property: data,
+        blog
       });
     });
   //To Reset Password
@@ -115,6 +117,21 @@ app.get('/blog',(req,res)=>{
 
 app.get('/temp',(req,res)=>{
     res.render('temp')
+})
+
+app.get('/api/sale',async(req,res)=>{
+let data=await propertyData.find({purpose:'Sale'})
+console.log(data)
+
+
+  res.render('sale',{data})
+})
+app.get('/api/rent',async (req,res)=>{
+  let data=await propertyData.find({purpose:'Rent'})
+  res.render('rent',{data})
+})
+app.get('/blogList',(req,res)=>{
+  res.render('blogList')
 })
 //Fuzzy
  

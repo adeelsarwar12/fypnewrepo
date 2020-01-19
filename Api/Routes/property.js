@@ -107,6 +107,9 @@ router.get('/list',ensureAuthenticated,async (req,res)=>{
       unread:beta})
   })
 
+  
+
+
   router.put('/status/:id',(req,res)=>{
     var id = req.params.id;
     propertyData.findOne({_id:id},function(err,foundObject){

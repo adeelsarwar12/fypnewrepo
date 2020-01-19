@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contact</title>
+    <title>Rent</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -39,7 +39,7 @@
     				</p>
     			</div>
     			<div class="col d-flex justify-content-end">
-    				<p class="num"><span class="icon-phone"></span>+923104648945</p>
+    				<p class="num"><span class="icon-phone"></span> +923104648945</p>
     			</div>
     		</div>
     	</div>
@@ -54,15 +54,16 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item active"><a href="/api/sale" class="nav-link">Sale</a></li>
-            <li class="nav-item active"><a href="/api/rent" class="nav-link">Rent</a></li>
-            <li class="nav-item"><a href="/api/agents" class="nav-link">Agents</a></li>
-            <li class="nav-item"><a href="/aboutus" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/api/blog" class="nav-link">Blog</a></li>
-            <li class="nav-item"><a href="/api/contact" class="nav-link">Contact</a></li>
-            <li class="nav-item cta"><a href="/api/login" class="nav-link ml-lg-2"><span class="icon-user"></span> Sign-In</a></li>
-            <li class="nav-item cta cta-colored"><a href="/api/signup" class="nav-link"><span class="icon-pencil"></span> Sign-Up</a></li>
+				
+                <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="/api/sale" class="nav-link">Sale</a></li>
+                <li class="nav-item active"><a href="/api/rent" class="nav-link">Rent</a></li>
+                <li class="nav-item"><a href="/api/agents" class="nav-link">Agents</a></li>
+                <li class="nav-item"><a href="/aboutus" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/api/blog" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/api/contact" class="nav-link">Contact</a></li>
+                <li class="nav-item cta"><a href="/api/login" class="nav-link ml-lg-2"><span class="icon-user"></span> Sign-In</a></li>
+                <li class="nav-item cta cta-colored"><a href="/api/signup" class="nav-link"><span class="icon-pencil"></span> Sign-Up</a></li>
 
 	        </ul>
 	      </div>
@@ -70,98 +71,55 @@
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap" style="background-image: url('/images/bg_1.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-            <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Contact</span></p>
-            <h1 class="mb-3 bread">Contact Us</h1>
-            <h3><% include ./partials/messages %></h3>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Rent</span></p>
+			
+						
+						  
+				
+			<h1 class="mb-3 bread">Rent</h1>
+          </div>
+        </div>
+      </div>
+	</div>
+	
+
+
+  <% for(let i = 0; i < data.length; i++) { %>
+    
+    <div class="card mb-3" style="max-width: 740px;left:20%;margin-top:5%">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <a href="/">
+            
+          <img class="bd-placeholder-img" width="100%" height="250" src="/<%= data[i].photo2 %>" alt="Image"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
+        </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <a href="/">
+            <h3 class="card-title"> Rs/<%= data[i].price %></h3>
+            <h4 class="card-text"><%= data[i].description %></h4>
+            
+            <p><%= data[i].propertyType %> <span class="glyphicon glyphicon-home"></span></p>
+            <h4 class="card-text"><%= data[i].address %></h4>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </a>
+            <button class="btn btn-info">Call</button>
+            <button class="btn btn-success">Email</button>
           </div>
         </div>
       </div>
     </div>
+  
+    <% } %>
+  
 
-    <section class="ftco-section contact-section bg-light">
-      <div class="container">
-        <div class="row d-flex mb-5 contact-info">
-          <div class="col-md-12 mb-4">
-            <h2 class="h3">Contact Information</h2>
-          </div>
-          <div class="w-100"></div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Website</span> <a href="#">yoursite.com</a></p>
-	          </div>
-          </div>
-        </div>
-        <div class="row block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="/api/contactus" method="POST" class="bg-white p-5 contact-form">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" name="email" required class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" name="subject" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
-          
-          </div>
-
-          <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>
-          </div>
-        </div>
-      </div>
-    </section>
 		
-		<section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <h2>Subcribe to our Newsletter</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-              <div class="row d-flex justify-content-center mt-5">
-                <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
@@ -248,6 +206,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="/js/google-map.js"></script>
   <script src="/js/main.js"></script>
+  <script src="/agent.js"></script>
     
   </body>
 </html>
