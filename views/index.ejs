@@ -393,10 +393,10 @@
     	</div>
     	<div class="container-fluid">
     		<div class="row">
-				<% for(let i = 0; i < 4; i++) { %>
+				<% for(let i = 0; i < property.length; i++) { %>
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="properties">
-    					<a href="/property/detailpage/<%=data[i].id%>" class="img img-2 d-flex justify-content-center align-items-center" ><img class="bd-placeholder-img" width="100%" height="250" src="/<%= property[i].photo3 %>" alt="Image">
+    					<a href="/property/detailpage/<%=property[i]._id%>" class="img img-2 d-flex justify-content-center align-items-center" ><img class="bd-placeholder-img" width="100%" height="250" src="/<%= property[i].photo3 %>" alt="Image">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -423,6 +423,8 @@
     				</div>
 				</div>
 				<% } %>
+			</div>
+    	</div>
     </section>
 
     

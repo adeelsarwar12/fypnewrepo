@@ -74,9 +74,10 @@ app.use(
   
 app.use("/property",property);
 app.get("/", async (req, res) => {
-    let data = await propertyData.find()
+    let data = await propertyData.find().limit(4)
+    console.log(data)
     let blog =await BlogData.find().limit(4)
-      res.render("index",{
+      res.render('index',{
         data:data,
         property: data,
         blog

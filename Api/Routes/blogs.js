@@ -51,7 +51,7 @@ let Alpha=req.user
          .then(result => {
            console.log(result);
           // res.json(result);
-           res.redirect('api/blogList');
+           res.redirect('/api/blogList');
          })
          .catch(err => {
            console.log(err);
