@@ -2,7 +2,7 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
         <div class="pull-left image">
-            <img src="/admin/img/avatar3.png" class="img-circle" alt="User Image" />
+            <img src="/<%=post.photo1%>" class="img-circle" alt="User Image" />
         </div>
         <div class="pull-left info">
             <p>Hello, <%=post.name%></p>
@@ -23,16 +23,21 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
         <li class="active">
-            <a href="index.html">
+            <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
         <li>
             <a href="/api/agents/form">
-                <i class="fa fa-th"></i> <span>Edit Profile</span> <small class="badge pull-right bg-green">new</small>
+                <i class="fa fa-th"></i> <span>Create Profile</span> <small class="badge pull-right bg-green">new</small>
             </a>
         </li>
-        <li class="treeview">
+        <li>
+            <a href="/api/agents/addproperty">
+                <i class="fa fa-th"></i> <span>Add Property</span> <small class="badge pull-right bg-green">new</small>
+            </a>
+        </li>
+        <!-- <li class="treeview">
             <a href="#">
                 <i class="fa fa-bar-chart-o"></i>
                 <span>Charts</span>
@@ -105,6 +110,6 @@
                 <li><a href="pages/examples/500.html"><i class="fa fa-angle-double-right"></i> 500 Error</a></li>
                 <li><a href="pages/examples/blank.html"><i class="fa fa-angle-double-right"></i> Blank Page</a></li>
             </ul>
-        </li>
+        </li> -->
     </ul>
 </section>

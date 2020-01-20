@@ -24,6 +24,7 @@
                         Create Your Profile
                         <small>Preview</small>
                     </h1>
+                    <h3><% include ./partials/messages %></h3>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li><a href="#">Forms</a></li>
@@ -42,27 +43,28 @@
                                   
                                 </div><!-- /.box-header -->
                                 <!-- form start -->
-                                <form role="form"  method="POST" action="/api/agents/addForm" >
+                                <form role="form"  method="POST" action="/api/agents/addForm" enctype="multipart/form-data">
                                     <div class="box-body">
                                         <div class="form-group">
+
                                             <label for="exampleInputEmail1">Enter Your Name</label>
-                                            <input type="text" name="Name" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
+                                            <input type="text" name="name" value="<%=post.name%>" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Enter Your Location</label>
-                                            <input type="text" name="Location" class="form-control" id="exampleInputEmail1" placeholder="Enter your Location">
+                                            <input type="text" name="address" value="<%=post.address%>" class="form-control" id="exampleInputEmail1" placeholder="Enter your Location">
                                         </div>
                                         <div class="form-group">
-                                                <label for="exampleInputEmail1">Age</label>
-                                                <input type="number" name="Age" class="form-control" id="exampleInputEmail1" placeholder="Enter your age">
+                                                <label for="exampleInputEmail1">Phone</label>
+                                                <input  name="tel" value="<%=post.tel%>" class="form-control" id="exampleInputEmail1" placeholder="03XX-XXXXXXX">
                                             </div>
                                         <div class="form-group">
                                             <label >Description</label>
-                                            <input type="text" name="Description" class="form-control" id="exampleInputPassword1" placeholder="">
+                                            <input type="text" name="description" value="Your Description Here" class="form-control" id="exampleInputPassword1" placeholder="">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile">Input your picture</label>
-                                            <input type="file" name="File" id="exampleInputFile">
+                                            <input type="file" name="photo" id="exampleInputFile">
                                             
                                         </div>
                                         <div class="checkbox">

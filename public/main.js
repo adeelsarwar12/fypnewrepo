@@ -41,3 +41,41 @@ function debounce(func, wait, immediate) {
       if (callNow) func.apply(context, args);
   }
 }
+
+
+$(document).ready(function() {
+    $("#form").submit(function() {
+      var id = $("#id").val();
+      $.ajax({
+        global: false,
+        type: "get",
+        url: "/property/contact/" + id,
+        success: function(res) {
+            window.console&&console.log(res.contact)
+          alert('Name ' +res.contact.name + ' Phone Number ' +res.contact.tel + ' Address ' + res.contact.address)
+        },
+        error: function(err) {
+          alert("Please Enter Correct Information");
+        }
+      });
+      return false;
+    });
+  });
+
+  $(document).ready(function() {
+    $("#form1").submit(function() {
+      var id = $("#id").val();
+      $.ajax({
+        global: false,
+        type: "get",
+        url: "/property/contact/" + id,
+        success: function(res) {
+          alert('Name ' +res.contact.name + ' Email Number ' +res.contact.email + ' Address ' + res.contact.address)
+        },
+        error: function(err) {
+          alert("Please Enter Correct Information");
+        }
+      });
+      return false;
+    });
+  });

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Online RealEstate Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap-4.1.2/bootstrap.min.css">
+	<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="/styles/booking.css">
+
+  </head>
+  <body>
+    <div class="top">
+    	<div class="container">
+    		<div class="row d-flex align-items-center">
+    			<div class="col">
+    				<p class="social d-flex">
+    					<a href="#"><span class="icon-facebook"></span></a>
+    					<a href="#"><span class="icon-twitter"></span></a>
+    					<a href="#"><span class="icon-google"></span></a>
+							<a href="#"><span class="icon-pinterest"></span></a>
+    				</p>
+    			</div>
+    			<div class="col d-flex justify-content-end">
+    				<p class="num"><span class="icon-phone"></span> +92-3104648</p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Online Real <span>Estate</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+			  <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+			  <li class="nav-item active"><a href="/api/sale" class="nav-link">Sale</a></li>
+			  <li class="nav-item active"><a href="/api/rent" class="nav-link">Rent</a></li>
+	          <li class="nav-item"><a href="/api/agents" class="nav-link">Agents</a></li>
+	          <li class="nav-item"><a href="/aboutus" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="/api/blog" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="/api/contact" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta"><a href="/api/login" class="nav-link ml-lg-2"><span class="icon-user"></span> Sign-In</a></li>
+	          <li class="nav-item cta cta-colored"><a href="/api/signup" class="nav-link"><span class="icon-pencil"></span> Sign-Up</a></li>
+
+	        </ul> 
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    <div class="container">
+        <br /><br />
+        <br /><br /><br /><br /><br />
+    </div>
+
+
+    <!-- Details Right -->
+
+    <div class="details">
+        <div class="container">
+            <div class="row">
+
+                <!-- Details Image -->
+                <div class="col-xl-7 col-lg-6">
+                    <div class="details_image">
+                        <div class="background_image"><img src="/<%= data.photo2%>" alt="<%= data.photo1 %>"></div>
+
+                    </div>
+                </div>
+
+                <!-- Details Content -->
+                <div class="col-xl-5 col-lg-6">
+                    <div class="details_content">
+                        <div class="details_title">Details</div>
+                        <div class="details_list">
+                            <ul>
+                                <li><%=data.address %></li>
+                                <li><%=data.city %></li>
+                                <li>For <%=data.mf %> Only</li>
+                                <li>Contact <%=data.phone %></li>
+                                <li>Nearby Locations : <%=data.near %></li>
+                                <li>Soundproofing</li>
+                                <li>Private bathroom</li>
+                                <li>Free WiFi</li>
+                            </ul>
+                        </div>
+                        <div class="details_long_list">
+                            <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                <li><%=data.description %></li>
+                            </ul>
+                        </div>
+                        <div class="book_now_button"><a href="/api/user/book/<%= data.adminId %>">Book Now</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  
+    <section class="ftco-section bg-light">
+    	<div class="container">
+				<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+          	<span class="subheading">Special Offers</span>
+            <h2 class="mb-4">Most Recommended Properties</h2>
+          </div>
+        </div>    		
+    	</div>
+    	<div class="container-fluid">
+    		<div class="row">
+				<% for(let i = 0; i < 4; i++) { %>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="properties">
+    					<a href="/property/detailpage/<%=property[i].id%>" class="img img-2 d-flex justify-content-center align-items-center" ><img class="bd-placeholder-img" width="100%" height="250" src="/<%= property[i].photo3 %>" alt="Image">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<span class="status sale"><%=property[i].purpose%></span>
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#"><%=property[i].city%></a></h3>
+		    						<p><%property[i].propertyType%></p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price">$<%=property[i].price%></span>
+    							</div>
+    						</div>
+    						<p><%=property[i].description%></p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="flaticon-selection"></i> <%=property[i].landArea%> sqft</span>
+    							<!-- <span class="ml-auto"><i class="flaticon-bathtub"></i> 3</span>
+    							<span><i class="flaticon-bed"></i> 4</span> -->
+    						</p>
+    					</div>
+    				</div>
+				</div>
+				<% } %>
+    </section>
+
+    
+
+   <!-- END nav -->
+   <div class="container">
+    <br /><br />
+    <br /><br /><br /><br /><br />
+</div>
+  
+		
+		<section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <h2>Subcribe to our Newsletter</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+              <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+                  <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <script
+  rel="javascript"
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+  <script src="/js/jquery.waypoints.min.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/aos.js"></script>
+  <script src="/js/jquery.animateNumber.min.js"></script>
+  <script src="/js/bootstrap-datepicker.js"></script>
+  <script src="/js/jquery.timepicker.min.js"></script>
+  <script src="/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/js/google-map.js"></script>
+  <script src="/js/main.js"></script>
+    <script src="/main.js"></script>
+  </body>
+</html>

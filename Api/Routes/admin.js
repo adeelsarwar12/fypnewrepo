@@ -19,7 +19,6 @@ router.post('/signup', (req, res) => {
     );
     res.redirect('/api/signup');
   }
-console.log(userType);
   if (password.length < 6) {
     req.flash(
       'error_msg',

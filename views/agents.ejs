@@ -82,67 +82,43 @@
 						  
 				
 			<h1 class="mb-3 bread">Agents</h1>
+			<div class="d-flex justify-content-center h-150 v-10" >
+				<div class="searchbar" style="padding-top:20dp">
+				  <input aria-label="Search" onkeyup="showResults(this.value)" type="text" class="form-control" placeholder="Search Agent">
+				  <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+				</div>
+				
+			</div>
+			<div class="d-flex justify-content-center h-100
+			style="margin-left: 0px;background: #ffffff; width: 40%;background-position-y: 2ch margin-top:10dp>	
+			<div class="border" id="search-results">
+	  
+			</div>
+		  </div>	
           </div>
         </div>
       </div>
 	</div>
 	
-
-
-
-	<!-- <form action="/result/search" method="GET" class="form-inline">
-		<div class="row">
-				<div class="col-md-12 search-wrap">
-					<h2 class="heading h5 d-flex align-items-center pr-4"><span class="ion-ios-search mr-3"></span> Search Agents</h2>
-					<form action="#" class="search-property">
-				<div class="row">
-					<div class="col-md align-items-end">
-						<div class="form-group">
-							
-						  <div class="form-field">
-							  <div class="icon"><span class="icon-pencil"></span></div>
-						<input aria-label="Search" onkeyup="showResults(this.value)" type="text" class="form-control" placeholder="Search Agent">
-					  </div>
-					  <div
-						style="margin-left: 200px; position:relative;background: #ffffff; width: 100%; top:-1px;">	
-						<div class="border" id="search-results">
-
-						</div>
-				  </div>
-					</div>
-					
-					</div>
-				
-					
-					</div>
-				</div>
-				
-			</form> -->
 	<!-- for search Form -->
 	<div class="container h-100 v-10">
-		<div class="d-flex justify-content-center h-150 v-10" >
-		  <div class="searchbar" style="padding-top:20dp">
-			<input aria-label="Search" onkeyup="showResults(this.value)" type="text" class="form-control" placeholder="Search Agent">
-			<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-		  </div>
-		  
-	  </div>
-	  <div class="d-flex justify-content-center h-100
-	  style="margin-left: 0px;background: #ffffff; width: 40%;background-position-y: 2ch margin-top:10dp>	
-	  <div class="border" id="search-results">
-
-	  </div>
-	</div>		
+			
     <section class="ftco-section bg-light">
     	<div class="container">
+
+
     		<div class="row">
+
+
+				<% for(let i = 0; i < data.length; i++) { %>
 					<div class="col-md-6 col-lg-3 ftco-animate">
+						<a href="/property/agent/<%=data[i].id%>">
 						<div class="staff">
-							<div class="img" style="background-image: url(/images/person_1.jpg);"></div>
+							<div class="img"><img class="bd-placeholder-img" width="100%" height="250" src="/<%= data[i].photo1 %>" alt="Image"></div>
 							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">4 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+								<h3><a href="#"><%= data[i].name %></a></h3>
+								<span class="position mb-2"><%= data[i].email %></span>
+								<p><%= data[i].address %></p>
 								<ul class="ftco-social d-flex">
 	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
 	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -151,118 +127,12 @@
 	              </ul>
 							</div>
 						</div>
+					</a>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(/images/person_2.jpg);"></div>
-							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">7 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								<ul class="ftco-social d-flex">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-							</div>
-						</div>
+					<% } %>
+
+
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(/images/person_3.jpg);"></div>
-							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">6 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								<ul class="ftco-social d-flex">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(/images/person_4.jpg);"></div>
-							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">5 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								<ul class="ftco-social d-flex">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(/images/staff-1.jpg);"></div>
-							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">8 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								<ul class="ftco-social d-flex">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(/images/staff-2.jpg);"></div>
-							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">4 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								<ul class="ftco-social d-flex">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(/images/staff-3.jpg);"></div>
-							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">5 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								<ul class="ftco-social d-flex">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(/images/staff-4.jpg);"></div>
-							<div class="text pt-4">
-								<h3><a href="#">Edward Howard</a></h3>
-								<span class="position mb-2">8 Listing</span>
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								<ul class="ftco-social d-flex">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-							</div>
-						</div>
 					</div>
 				</div>
     		<div class="row mt-5">

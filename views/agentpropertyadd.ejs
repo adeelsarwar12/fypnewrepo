@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+            <% include ./partials/Agents_dashboard/head %>
 
-<head>
-  <% include ./partials/user/head %>
-  <style>
-  body{
-      background-color: #eeeeee
-  }
-  </style>
-</head>
+    </head>
+    <body class="skin-black">
+        <!-- header logo: style can be found in header.less -->
+        <% include ./partials/Agents_dashboard/header %>
+     
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                    <% include ./partials/Agents_dashboard/sidenavbar %>
+                <!-- sidebar: style can be found in sidebar.less -->
+              
+            </aside>
 
-<body>
-  <!-- container section start -->
-  <section id="container" class="">
-    
-    <!-- header down here -->
-    <% include ./partials/user/header %>
-    <!--sidebar start-->
-    <% include ./partials/user/sidenavbar %>
-    <!--sidebar end-->
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Create Your Profile
+                        <small>Preview</small>
+                    </h1>
+                    <h3><% include ./partials/messages %></h3>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="#">Forms</a></li>
+                        <li class="active">General Elements</li>
+                    </ol>
+                </section>
 
-    <!--main content start-->
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <% include ./partials/user/head %>
-</head>
-
-<body>
-  <!-- container section start -->
-  <section id="container" class="">
-    
-    <!-- header down here -->
-    <% include ./partials/user/header %>
-    <!--sidebar start-->
-    <% include ./partials/user/sidenavbar %>
-    <!--sidebar end-->
-
-    <!--main content start-->
+            <!--main content start-->
     <section id="main-content">
         <div class="container">    
             <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -147,20 +141,9 @@
     </div> 
     <!--main content end-->
   </section>
-  <!-- container section start -->
-
-  <!-- javascripts -->
-  <% include ./partials/user/sidenavbar %>
-
-</body>
-
-</html>
-
-  <!-- container section start -->
-  </section>
-  <!-- javascripts -->
-  <% include ./partials/user/sidenavbar %>
-
-</body>
-
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+        <!-- jQuery 2.0.2 -->
+        <% include ./partials/Agents_dashboard/adminJs %> 
+    </body>
 </html>

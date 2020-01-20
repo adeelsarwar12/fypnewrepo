@@ -15,7 +15,7 @@ router.get('/',ensureAuthenticated,(req,res)=>{
   {
     res.redirect('/api/admin/dashboard')
   }
-  else if(alpha.role==='agents')
+  else if(alpha.role==='agent')
   {
     res.redirect('/api/agents/dashboard')
   }

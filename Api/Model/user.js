@@ -24,7 +24,12 @@ const userSchema = mongoose.Schema({
     role:{
         type:String,
         require:true
-    },resetPasswordToken:String,
+    },
+    photo1:{
+   
+     type:String
+     }
+     ,resetPasswordToken:String,
     resetPasswordExpires:String
 });
 

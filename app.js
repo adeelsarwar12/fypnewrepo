@@ -76,7 +76,6 @@ app.use("/property",property);
 app.get("/", async (req, res) => {
     let data = await propertyData.find()
     let blog =await BlogData.find().limit(4)
-    console.log(data)
       res.render("index",{
         data:data,
         property: data,
@@ -121,9 +120,6 @@ app.get('/temp',(req,res)=>{
 
 app.get('/api/sale',async(req,res)=>{
 let data=await propertyData.find({purpose:'Sale'})
-console.log(data)
-
-
   res.render('sale',{data})
 })
 app.get('/api/rent',async (req,res)=>{
@@ -133,10 +129,10 @@ app.get('/api/rent',async (req,res)=>{
 app.get('/blogList',(req,res)=>{
   res.render('blogList')
 })
-//Fuzzy
- 
+//Fuzzy 
+
 app.get('/api/agents',(req,res)=>{
-    res.render('agents');
+res.redirect('/api/agents/allagents')
 })
 
 

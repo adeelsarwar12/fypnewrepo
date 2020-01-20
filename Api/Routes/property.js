@@ -5,7 +5,7 @@ const multer = require('multer');
 const { ensureAuthenticated, forwardAuthenticated } = require('../../config/auth');
 const propertyData = require('../Model/properties');
 mongoose = require('mongoose')
-  contactModel = mongoose.model('ContactUs')
+contactModel = mongoose.model('NewUserModel')
 // SET STORAGE
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
       cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname);
     }
   });
-  //****************** */
+  //**********************/
   const fileFilter = (req, file, cb) => {
     // reject a file
     if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
@@ -60,8 +60,9 @@ router.get("/newsearch", function(req, res){
             if(allCampgrounds.length < 1) {
                 noMatch = "No campgrounds match that query, please try again.";
             }
-           // res.render("campgrounds/index",{campgrounds:allCampgrounds, noMatch: noMatch});
-           res.send(allCampgrounds)
+           res.render('searchdeatails',{
+            campgrounds:allCampgrounds
+           })
          }
       });
   } else {
@@ -70,14 +71,15 @@ router.get("/newsearch", function(req, res){
          if(err){
              console.log(err);
          } else {
-            res.send(allCampgrounds)
+          res.render('searchdeatails',{
+            campgrounds:allCampgrounds
+           })
          }
       });
   }
 });
 //Escaping / makes the function suitable for escaping characters to be used in a JS regex literal for later eval.
 function escapeRegex(text) {
-  console.log(text)
   text.replace("/[-[\]{}()*+?.,\\^$|#\s]/g", "\\$&")
   return text;
   
@@ -85,21 +87,9 @@ function escapeRegex(text) {
 
 router.get('/list',ensureAuthenticated,async (req,res)=>{
   let user= req.user
-  var MongoClient = require('mongodb').MongoClient;
-//   var url = "mongodb://localhost:27017/FYP";
-   var Alpha
-// MongoClient.connect(url, function(err, db) {
- 
-//   if (err) throw err;
-//   Alpha = db.collection("ContactUs").find({status: 'unread'}, function(err, result) {
-//     if (err) throw err;
-//     console.log(result.name);
-//     db.close();
-//   });
-// });
   let data = await propertyData.find({isActive:'pending'})
   let chek= await contactModel.find({status: 'unread'})
-  console.log(chek)
+  
   beta = chek.length
     res.render('approve', {
       data:data,
@@ -128,5 +118,38 @@ router.get('/list',ensureAuthenticated,async (req,res)=>{
       res.redirect('/property/list')
     })
 
+  })
+
+  router.get('/detailpage/:id',async (req,res)=>{
+    let data = await propertyData.findOne({_id: req.params.id})
+    let property = await propertyData.find().limit(4)
+    res.render('details',{
+      data,
+      property
+    })
+  })
+
+  router.get('/cont/:id',async (req,res)=>{
+    let contact = await contactModel.findOne({_id: req.params.id})
+    console.log(contact)
+    return  res.json({
+      authsuccess: true,
+      contact: contact
+  });
+  })
+
+  router.get('/contact/:id',async (req,res)=>{
+    let contact = await contactModel.findOne({_id: req.params.id})
+    console.log(contact)
+    return  res.json({
+      authsuccess: true,
+      contact: contact
+  });
+  })
+  router.get('/agent/:id', async(req,res)=>{
+    let data =await propertyData.find({userId:req.params.id})
+    res.render('agentproperty',{
+      data
+    })
   })
 module.exports = router;

@@ -5,7 +5,6 @@ const property = require('../Model/properties');
 exports.addProperty = async(req, res,next) => {
   let alpha = req.user
   var Files = req.files;
-  console.log(Files)
   if (Files.length < 3 || Files.length > 3) {
     req.flash(
       'error_msg',
@@ -34,7 +33,6 @@ exports.addProperty = async(req, res,next) => {
 
           var address = pt+" "+loc+" "+cit
           address.toLowerCase()
-          console.log(address)
               const Property = new property({
                 userId: alpha._id,
                 purpose: req.body.select,
@@ -53,14 +51,13 @@ exports.addProperty = async(req, res,next) => {
                 photo1: req.files[0].path,
                 photo2: req.files[1].path,
                 photo3: req.files[2].path,
-                isActive: 'pending'
+                isActive: 'pending',
+                role:alpha.role
 
               });
               Property
                 .save()
-                .then(result => {
-                  console.log(result);
-                 
+                .then(result => {                 
                   res.redirect('/user/')
                 })
                 .catch(err => {

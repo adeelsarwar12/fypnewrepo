@@ -65,6 +65,9 @@ const propertyDataField = mongoose.Schema({
   },
   isActive: {
     type:String
+  },
+  role:{
+    type:String
   }
 });
 
